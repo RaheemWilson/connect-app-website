@@ -7,12 +7,17 @@
     font-family: Rubik, sans-serif;
 }
 
+img{
+    width: auto;
+    height: auto;
+}
+
 .app{
     padding: 1rem 4rem 0 4rem;
-    height: auto;
-    width: 100%;
-    min-width: 100%;
-    
+    @media screen and (max-width:600px) {
+        padding: 1rem;
+        padding-bottom: 0;
+    }
 }
 
 ul, li{

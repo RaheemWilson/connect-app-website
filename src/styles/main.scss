@@ -1,41 +1,93 @@
 @use './colours' as c;
 
-
 @mixin p {
     font-size: 24px;
     font-weight: 100;
     line-height: 160%;
     margin: 1rem 0;
+
+    @media screen and (max-width:850px) {
+        margin: 1rem auto;
+        font-size: 18px;
+        line-height: 140%;
+        width: 100%;
+    }
 }
 
-@mixin full-width{
-    margin: 0 -4rem;
+@mixin h2{
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 55px;
+    color: #000000;
+
+    @media screen and (min-width:800px) and (max-width:1080px) {
+        line-height: 40px;
+        font-size: 2.8rem;
+        width: 100%;
+    }
+
+    @media screen and (max-width:800px) {
+        line-height: 40px;
+        font-size: 36px;
+        width: 100%;
+    }
 }
 
 .hero{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding-top: 3rem;
+    flex-direction: row;
+    padding-top: 5%;
 
+    @media screen and (max-width:800px) {
+        text-align: center;
+        flex-wrap: wrap-reverse;
+    }
+}
+
+.hero-image{
+    img{
+        @media screen and (min-width:800px) and (max-width:1080px) {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (max-width:800px) {
+            width: 320px;
+            height: 415px;
+        }
+    }
 }
 
 .hero-content{
     width: 50%;
     margin-bottom: 14rem;
 
+    @media screen and (max-width:1000px) {
+        width: 100%;
+        margin-bottom: 4rem;
+     }
+
     .hero-title{
         font-style: normal;
         font-weight: bold;
         font-size: 4rem;
-        line-height: 76px;
+        line-height: 120%;
+
+        @media screen and (min-width:800px) and (max-width:1000px) {
+            font-size: 2.8rem;
+        }
+
+        @media screen and (max-width:800px) {
+           font-size: 36px;
+        }
+
     }
 
     .hero-info{
         width: 80%;
-        font-size: 24px;
-        font-weight: 100;
-        line-height: 160%;
+        @include p;
     }
 
     .hero-ctas{
@@ -51,36 +103,54 @@
     height: 44px;
     padding: 0 1.5rem;
     margin: 3rem 1rem 0 0;
-}
 
-.hero-image{
-
-    img{
-        height: auto;
-        width: 750px;
-        object-fit: cover;
+    @media screen and (max-width:1080px) {
+        margin: 0 auto;
+        margin: 5px;
     }
+
 }
 
-h2{
-    font-weight: bold;
-    font-size: 46px;
-    line-height: 55px;
-    color: #000000;
-}
+
 
 .credibility-content{
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 140px;
+
+    @media screen and (max-width:1080px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
     .app-screen{
-        margin-top: -20rem;
+        margin-top: -15rem;
+        margin-left: -1rem;
+
+        @media screen and (max-width:1080px) {
+            margin-top: -3rem;
+        }
+
+        @media  screen and (max-width:600px) {
+            width: 314px;
+            height: 480px;
+        }
+
     }
 
     .credible-info{
+        margin-left: 4rem;
+
+        @media screen and (max-width:1100px) {
+            margin-left: 0;
+        }
+
+        @media  screen and (max-width:1000px) {
+            text-align: center;
+        }
+
         #credible-header{
             width: 400px;
+            @include h2;
         }
     
         #credible-desc{
@@ -94,6 +164,11 @@ h2{
     display: flex;
     align-items: center;
     margin-top: 3rem;
+
+    @media  screen and (max-width:600px) {
+        margin-top: 0;
+        text-align: center;
+    }
     
     .user-profiles{
         display: grid;
@@ -101,7 +176,13 @@ h2{
         direction: rtl;
         position: absolute;
         left: 24px;
-    
+
+        @media  screen and (max-width:1000px) {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         .profiles{
             width: 52px;
             height: 52px;
@@ -111,6 +192,12 @@ h2{
     p{
         margin-left: 156px;
         font-weight: bold;
+
+        @media  screen and (max-width:1000px) {
+            margin: 0 auto;
+            margin-top: 6rem;
+            
+        }
     }
 }
 
@@ -118,15 +205,51 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem 4rem;
+
+    @media screen and (max-width:1080px) {
+        flex-wrap: wrap;
+    }
+
     .register-info{
+        @media screen and (min-width:601px) {
+            margin-top: 4rem;
+        }
+
+        @media  screen and (max-width:1000px) {
+            margin-top: 3rem;
+            text-align: center;
+            
+        }
+
         #register-header{
-            width: 500px
+            width: 500px;
+            @include h2;
+            
         }
 
         #register-desc{
+            width: 500px;            
             @include p;
-            width: 500px;
+
+            @media screen and (min-width:800px) and (max-width:1080px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.register-img, .cta-img{
+    img{
+        @media screen and (min-width:800px) and (max-width:1080px) {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width:800px) {
+            width: 320px;
+            height: 415px;
         }
     }
 }
@@ -135,12 +258,17 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     flex-direction: column;
+    text-align: center;
+
+    .review-header{
+        @include h2;
+    }
 
     .review-desc{
-        @include p;
         width: 600px;
-        text-align: center;
+        @include p;
         span{
             font-weight: 500;
         }
@@ -148,8 +276,10 @@ h2{
 
     .review-cards{
         display: flex;
+        justify-content: center;
         flex-direction: row;
-        gap: 4rem;
+        flex-wrap: wrap;
+        gap: 2rem;
 
         .review-card{
             width: 330px;
@@ -164,6 +294,13 @@ h2{
             border-radius: 10px;
             text-align: center;
             padding: 1rem;
+
+            @media screen and (max-width:600px) {
+                width: 280px;
+                height: 280px;
+                gap: 0.25rem;
+            }
+
 
             .user{
                 width: 80px;
@@ -182,28 +319,51 @@ h2{
 .cta-content{
     background-color: c.$color;
     color: #fff;
-    @include full-width;
-    height: auto;
     padding: 0 4rem;
-    margin-top: 18rem;
+    margin: 0 -4rem;
+    margin-top: 15rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    position: relative;
+
+    @media screen and (max-width:900px) {
+        margin: 0;
+        margin-top: 3rem;  
+        padding: 8rem 1rem;
+    }
+
+    .cta-info{
+        @media screen and (max-width:900px) {
+            position: absolute;
+            padding: 4rem 1rem;
+            text-align: center;
+            width: 100vw;
+            background-color: c.$color;
+        }
+    }
 }
+
 
 .cta-img{
     margin-top: -9rem;
-    margin-left: 8rem;
+
+    img{
+        @media screen and (max-width:900px) {
+            display: none;
+        }
+    }
 }
 
 #cta-header{
+    @include h2;
     color: #fff;
 }
 
 #cta-desc{
-    @include p;
     width: 480px;
+    @include p;
     margin-bottom: 32px;
 }
 

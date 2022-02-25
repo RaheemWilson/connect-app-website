@@ -9,9 +9,10 @@ import user4 from '../assets/user-4.png'
 import '../styles/main.scss'
 import { ReviewCards } from './ReviewCards'
 
+
 export default function Main(){
     return (
-        <div className="main-container">
+        <main className="main-container">
             <div className="hero">
                 <div className="hero-content">
                     <h1 className="hero-title">
@@ -60,7 +61,7 @@ export default function Main(){
                         Global reach, right from your pocket.
                     </h2>
                     <p id='register-desc'>
-                        With people all across the world, you’re bound to meet people of different cultures and backgrounds or even right at home.
+                        With people all across the world, you're bound to meet people of different cultures and backgrounds or even right at home.
                     </p>
                     <button className='btn register-today'>Register today</button>
                 </div>
@@ -87,11 +88,11 @@ export default function Main(){
                     </p>
                     <button className='btn cta-today'>Starting using Connect</button>
                 </div>
-                <div className="cta-img">
+                <div  className="cta-img">
                     <img src={AppUsers} alt="Users using the Connect app"/>
                 </div>
             </div>
 
-        </div>
+        </main>
     );
 }

@@ -1,22 +1,69 @@
-@use './main.scss' as m;
+
 .page-footer{
     background-color: #242424;
     color: #fff;
-    @include m.full-width;
+    margin: 0 -4rem;
     padding: 4rem;
+    position: relative;
+
+    @media screen and (max-width:900px) {
+        margin: 0;
+        margin-top: 4%;
+    }
+
+    @media screen and (max-width:400px) {
+       margin-top: 3rem; 
+    }
+    
 
     .nav-bar{
         display: flex;
         align-items: center;
         justify-content: flex-end;
+
+        @media screen and (max-width:900px) {
+            justify-content: center;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            position: absolute;
+            width: 100vw;
+            background-color: #242424;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 4rem;
+        }
     }
 
     .app-logo{
         margin-right: auto;
+
+        @media screen and (max-width:900px){
+            margin: 0 auto;
+        }
+    }
+
+    .nav-options{
+        display: inline-flex;
+        align-items: center;
+        @media screen and (max-width:400px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
     }
 
     .nav-option, .app-name{
         color: #fff;
+    }
+
+    .btn{
+        @media screen and (max-width:600px) {
+            display: none;
+        }
     }
 
 }
