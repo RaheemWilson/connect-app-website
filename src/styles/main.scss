@@ -1,10 +1,23 @@
 @use './colours' as c;
 
+
+@mixin p {
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 160%;
+    margin: 1rem 0;
+}
+
+@mixin full-width{
+    margin: 0 -4rem;
+}
+
 .hero{
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-top: 3rem;
+
 }
 
 .hero-content{
@@ -26,13 +39,6 @@
     }
 
     .hero-ctas{
-        .btn{
-            width: auto;
-            height: 44px;
-            padding: 0 1.5rem;
-            margin: 3rem 1rem 0 0;
-        }
-
         .learn-more{
             background-color: #fff;
             color: c.$color;
@@ -40,6 +46,12 @@
     }
 }
 
+.hero-ctas .btn, .register-today{
+    width: auto;
+    height: 44px;
+    padding: 0 1.5rem;
+    margin: 3rem 1rem 0 0;
+}
 
 .hero-image{
 
@@ -49,3 +61,158 @@
         object-fit: cover;
     }
 }
+
+h2{
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 55px;
+    color: #000000;
+}
+
+.credibility-content{
+    display: inline-flex;
+    align-items: center;
+    gap: 140px;
+
+    .app-screen{
+        margin-top: -20rem;
+    }
+
+    .credible-info{
+        #credible-header{
+            width: 400px;
+        }
+    
+        #credible-desc{
+            @include p;
+        }
+    }
+}
+
+.stats{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    
+    .user-profiles{
+        display: grid;
+        grid-template-columns: repeat(4, 30px);
+        direction: rtl;
+        position: absolute;
+        left: 24px;
+    
+        .profiles{
+            width: 52px;
+            height: 52px;
+        }
+    }
+
+    p{
+        margin-left: 156px;
+        font-weight: bold;
+    }
+}
+
+.register-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    .register-info{
+        #register-header{
+            width: 500px
+        }
+
+        #register-desc{
+            @include p;
+            width: 500px;
+        }
+    }
+}
+
+.review-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .review-desc{
+        @include p;
+        width: 600px;
+        text-align: center;
+        span{
+            font-weight: 500;
+        }
+    }
+
+    .review-cards{
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+
+        .review-card{
+            width: 330px;
+            height: 330px;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.75rem;
+            box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
+            border-radius: 10px;
+            text-align: center;
+            padding: 1rem;
+
+            .user{
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .btn{
+            margin-top: 1rem;
+            width: 9rem;
+            height: 48px;
+        }
+    }
+}
+
+.cta-content{
+    background-color: c.$color;
+    color: #fff;
+    @include full-width;
+    height: auto;
+    padding: 0 4rem;
+    margin-top: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.cta-img{
+    margin-top: -9rem;
+    margin-left: 8rem;
+}
+
+#cta-header{
+    color: #fff;
+}
+
+#cta-desc{
+    @include p;
+    width: 480px;
+    margin-bottom: 32px;
+}
+
+.cta-today{
+    background-color: #fff;
+    color: c.$color;
+    border: 1px solid #fff;
+    height: 44px;
+    padding: 0 2rem;
+    width: auto;
+}
+

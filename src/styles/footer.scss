@@ -1,0 +1,22 @@
+@use './main.scss' as m;
+.page-footer{
+    background-color: #242424;
+    color: #fff;
+    @include m.full-width;
+    padding: 4rem;
+
+    .nav-bar{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .app-logo{
+        margin-right: auto;
+    }
+
+    .nav-option, .app-name{
+        color: #fff;
+    }
+
+}
